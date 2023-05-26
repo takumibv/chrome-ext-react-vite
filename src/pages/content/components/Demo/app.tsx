@@ -1,9 +1,15 @@
 import { useEffect } from "react";
+import style from "../../index.css";
 
 export default function App() {
   useEffect(() => {
     console.log("content view loaded");
   }, []);
 
-  return <div className="content-view">content view</div>;
+  return (
+    <>
+      <style type="text/css">{style.toString()}</style>
+      <div className="">content view</div>
+    </>
+  );
 }
