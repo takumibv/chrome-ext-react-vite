@@ -23,13 +23,20 @@ const manifest: chrome.runtime.ManifestV3 = {
   icons: {
     "128": "icon-128.png",
   },
+  permissions: [
+    "tabs",
+    "contextMenus",
+    "storage",
+    "scripting",
+    "webNavigation",
+  ],
   content_scripts: [
-    {
-      matches: ["http://*/*", "https://*/*", "<all_urls>"],
-      js: ["src/pages/content/index.js"],
-      // KEY for cache invalidation
-      css: ["assets/css/contentStyle<KEY>.chunk.css"],
-    },
+    //   {
+    //     matches: ["http://*/*", "https://*/*", "<all_urls>"],
+    //     js: ["src/pages/content/index.js"],
+    //     // KEY for cache invalidation
+    //     css: ["assets/css/contentStyle<KEY>.chunk.css"],
+    //   },
   ],
   devtools_page: "src/pages/devtools/index.html",
   web_accessible_resources: [
@@ -43,6 +50,7 @@ const manifest: chrome.runtime.ManifestV3 = {
       matches: ["*://*/*"],
     },
   ],
+  host_permissions: ["*://*/*"],
 };
 
 export default manifest;

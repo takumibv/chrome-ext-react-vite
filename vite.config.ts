@@ -5,6 +5,7 @@ import makeManifest from "./utils/plugins/make-manifest";
 import customDynamicImport from "./utils/plugins/custom-dynamic-import";
 import addHmr from "./utils/plugins/add-hmr";
 import manifest from "./manifest";
+import twindPlugin from "./vite-twind-plugin";
 
 const root = resolve(__dirname, "src");
 const pagesDir = resolve(root, "pages");
@@ -27,6 +28,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    twindPlugin(),
     react(),
     makeManifest(manifest, {
       isDev,
@@ -48,7 +50,7 @@ export default defineConfig({
         panel: resolve(pagesDir, "panel", "index.html"),
         content: resolve(pagesDir, "content", "index.ts"),
         background: resolve(pagesDir, "background", "index.ts"),
-        contentStyle: resolve(pagesDir, "content", "style.scss"),
+        // contentStyle: resolve(pagesDir, "content", "style.scss"),
         popup: resolve(pagesDir, "popup", "index.html"),
         newtab: resolve(pagesDir, "newtab", "index.html"),
         options: resolve(pagesDir, "options", "index.html"),
@@ -66,9 +68,9 @@ export default defineConfig({
           const { dir, name: _name } = path.parse(assetInfo.name);
           const assetFolder = dir.split("/").at(-1);
           const name = assetFolder + firstUpperCase(_name);
-          if (name === "contentStyle") {
-            return `assets/css/contentStyle${cacheInvalidationKey}.chunk.css`;
-          }
+          // if (name === "contentStyle") {
+          //   return `assets/css/contentStyle${cacheInvalidationKey}.chunk.css`;
+          // }
           return `assets/[ext]/${name}.chunk.[ext]`;
         },
       },
