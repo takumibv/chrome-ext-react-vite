@@ -1,7 +1,7 @@
 import App from "@src/pages/content/components/Demo/app";
 import refreshOnUpdate from "virtual:reload-on-update-in-view";
 import ReactDOM from "react-dom";
-import "../../index.css";
+import style from "../../index.css";
 
 refreshOnUpdate("pages/content");
 
@@ -18,7 +18,13 @@ const injectDomElements = () => {
   const shadowWrapper = document.createElement("div");
   shadowRoot.append(shadowWrapper);
 
-  ReactDOM.render(<App />, shadowWrapper);
+  ReactDOM.render(
+    <>
+      <style type="text/css">{style.toString()}</style>
+      <App />
+    </>,
+    shadowWrapper
+  );
 };
 
 (function () {

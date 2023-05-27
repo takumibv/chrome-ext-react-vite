@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import style from "../../index.css";
 
 export default function App() {
   useEffect(() => {
@@ -8,8 +7,7 @@ export default function App() {
 
   return (
     <>
-      <style type="text/css">{style.toString()}</style>
-      <div className="">content view</div>
+      <div className="text-red-500">content view</div>
     </>
   );
 }

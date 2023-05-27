@@ -5,7 +5,6 @@ import makeManifest from "./utils/plugins/make-manifest";
 import customDynamicImport from "./utils/plugins/custom-dynamic-import";
 import addHmr from "./utils/plugins/add-hmr";
 import manifest from "./manifest";
-import twindPlugin from "./vite-twind-plugin";
 
 const root = resolve(__dirname, "src");
 const pagesDir = resolve(root, "pages");
@@ -28,7 +27,6 @@ export default defineConfig({
     },
   },
   plugins: [
-    twindPlugin(),
     react(),
     makeManifest(manifest, {
       isDev,
