@@ -1,8 +1,7 @@
 import React from "react";
-// import "@pages/options/Options.css";
 
 const Options: React.FC = () => {
-  return <div className="">Options</div>;
+  return <div className="font-bold">Options</div>;
 };
 
 export default Options;

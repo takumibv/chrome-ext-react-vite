@@ -31,6 +31,7 @@ const manifest: chrome.runtime.ManifestV3 = {
     "webNavigation",
   ],
   content_scripts: [
+    // コンテンツスクリプトはbackgroundから挿入
     //   {
     //     matches: ["http://*/*", "https://*/*", "<all_urls>"],
     //     js: ["src/pages/content/index.js"],

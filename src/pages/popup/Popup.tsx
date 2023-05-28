@@ -3,14 +3,14 @@ import logo from "@assets/img/logo.svg";
 
 const Popup = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className="">
+    <div className="p-4">
+      <header>
+        <img src={logo} alt="logo" />
+        <p className="font-bold">
           Edit <code>src/pages/popup/Popup.tsx</code> and save to reload.
         </p>
         <a
-          className="App-link"
+          className="text-blue-500 underline"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
